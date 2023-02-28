@@ -10,6 +10,7 @@
     </parent>
 
     <artifactId>xc-content-model</artifactId>
+
     <dependencies>
         <dependency>
             <groupId>com.wxy97</groupId>
