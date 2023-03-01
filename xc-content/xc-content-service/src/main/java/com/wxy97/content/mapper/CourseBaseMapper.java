@@ -2,6 +2,7 @@ package com.wxy97.content.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.wxy97.content.model.po.CourseBase;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -10,6 +11,7 @@ import com.wxy97.content.model.po.CourseBase;
  *
  * @author wxy
  */
+@Mapper
 public interface CourseBaseMapper extends BaseMapper<CourseBase> {
 
 }

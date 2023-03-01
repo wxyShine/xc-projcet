@@ -22,7 +22,7 @@ import java.util.List;
 @RestController
 public class CourseCategoryController {
 
-    CourseCategoryService courseCategoryService;
+    private  final CourseCategoryService courseCategoryService;
 
     public CourseCategoryController(CourseCategoryService courseCategoryService) {
         this.courseCategoryService = courseCategoryService;

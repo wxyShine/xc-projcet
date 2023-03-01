@@ -27,14 +27,14 @@
         <fastjson.version>1.2.83</fastjson.version>
         <druid-spring-boot-starter.version>1.2.16</druid-spring-boot-starter.version>
         <mysql-connector-java.version>8.0.30</mysql-connector-java.version>
-        <mybatis-plus-boot-starter.version>3.4.1</mybatis-plus-boot-starter.version>
+        <mybatis-plus-boot-starter.version>3.5.3.1</mybatis-plus-boot-starter.version>
         <commons-lang.version>2.6</commons-lang.version>
         <minio.version>8.4.3</minio.version>
         <xxl-job-core.version>2.3.1</xxl-job-core.version>
         <swagger-annotations.version>1.5.20</swagger-annotations.version>
         <commons-lang3.version>3.10</commons-lang3.version>
         <okhttp.version>4.8.1</okhttp.version>
-        <swagger-spring-boot-starter.version>1.9.0.RELEASE</swagger-spring-boot-starter.version>
+        <swagger-spring-boot-starter.version>2.0.2.RELEASE</swagger-spring-boot-starter.version>
         <elasticsearch.version>7.12.1</elasticsearch.version>
     </properties>
 
@@ -191,34 +191,69 @@
 
     </dependencyManagement>
 
+
     <build>
+        <finalName>${project.name}</finalName>
+        <!--编译打包过虑配置-->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+        </resources>
         <plugins>
+            <!--打包插件-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                    <encoding>UTF-8</encoding>
+                    <!--指定项目源码jdk的版本-->
+                    <source>17</source>
+                    <!--指定项目编译后的jdk的版本-->
+                    <target>17</target>
+                    <!--配置注解预编译-->
+                    <annotationProcessorPaths>
+                        <!--                        <path>
+                                                    <groupId>org.mapstruct</groupId>
+                                                    <artifactId>mapstruct-processor</artifactId>
+                                                    <version>${org.mapstruct.version}</version>
+                                                </path>-->
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${org.projectlombok.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
-            <!--           <plugin>
-                           <groupId>org.springframework.boot</groupId>
-                           <artifactId>spring-boot-maven-plugin</artifactId>
-                           <version>2.3.7.RELEASE</version>
-                           <configuration>
-                               <mainClass>com. wxy97.XuechengPlusParentApplication</mainClass>
-                           </configuration>
-                           <executions>
-                               <execution>
-                                   <id>repackage</id>
-                                   <goals>
-                                       <goal>repackage</goal>
-                                   </goals>
-                               </execution>
-                           </executions>
-                       </plugin>-->
+
+            <!--责处理项目资源文件并拷贝到输出目录，如果有额外的资源文件目录则需要配置-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <encoding>utf-8</encoding>
+                    <!--使用默认分隔符，resource中可以使用分割符定义过虑的路径-->
+                    <useDefaultDelimiters>true</useDefaultDelimiters>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>

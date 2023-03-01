@@ -23,7 +23,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CourseBaseInfoController {
 
-    CourseBaseInfoService courseBaseInfoService;
+
+    private final   CourseBaseInfoService courseBaseInfoService;
 
     public CourseBaseInfoController(CourseBaseInfoService courseBaseInfoService) {
         this.courseBaseInfoService = courseBaseInfoService;

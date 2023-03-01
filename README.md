@@ -5,3 +5,10 @@
  
 ## 采用最新版本
 `JDK17`,`SpringBoot3.0`,`SpringCloud2022.0.1`, `springCloudAlibaba2.2.10-RC1`
+
+
+
+
+## 新版本探坑
+#### 1.bootstrap.yml配置不生效
+> 在启动程序时加入 -Dspring.cloud.bootstrap.enabled=true  否则bootstrap.yml 不会生效  [参考](https://www.jianshu.com/p/f6ec19fb5596)
