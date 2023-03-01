@@ -12,7 +12,7 @@
 
 
 
-## 新版本探坑
+## 新版本注意事项
 #### 1.bootstrap.yml配置不生效
 > 在启动程序时加入 -Dspring.cloud.bootstrap.enabled=true  否则bootstrap.yml 不会生效  [参考](https://www.jianshu.com/p/f6ec19fb5596)
 #### 2. MP新版本代码生成器
