@@ -1,8 +1,6 @@
 package ${package.Controller};
 
-
 import org.springframework.web.bind.annotation.RequestMapping;
-
 <% if(restControllerStyle){ %>
 import org.springframework.web.bind.annotation.RestController;
 <% }else{ %>
@@ -25,7 +23,7 @@ import ${superControllerClassPackage};
 <% }else{ %>
 @Controller
 <% } %>
-@RequestMapping("<% if(isNotEmpty(package.ModuleName)){ %>/${package.ModuleName}<% } %>/<% if(isNotEmpty(controllerMappingHyphenStyle)){ %>${controllerMappingHyphen}<% }else{ %>${table.entityPath}<% } %>")
+@RequestMapping("<% if(isNotEmpty(package.ModuleName)){ %>/${package.ModuleName}<% } %>/<% if(controllerMappingHyphenStyle){ %>${controllerMappingHyphen}<% }else{ %>${table.entityPath}<% } %>")
 <% if(kotlin){ %>
 class ${table.controllerName}<% if(isNotEmpty(superControllerClass)){ %> : ${superControllerClass}()<% } %>
 <% }else{ %>
