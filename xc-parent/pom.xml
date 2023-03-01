@@ -12,6 +12,7 @@
         <module>../xc-base</module>
         <module>../xc-content</module>
         <module>../xc-generator</module>
+        <module>../xc-system</module>
     </modules>
 
     <properties>
