@@ -17,7 +17,7 @@ import java.util.Collections;
 public class NewGenerator {
     public static void main(String[] args) {
 
-        FastAutoGenerator.create("jdbc:mysql://47.95.200.155:3306/xc_content?serverTimezone=UTC&userUnicode=true&useSSL=false",
+        FastAutoGenerator.create("jdbc:mysql://47.95.200.155:3306/xc_system?serverTimezone=UTC&userUnicode=true&useSSL=false",
                 "root", "smx13imu")
             .globalConfig(builder -> {
                 builder.author("wxy") // 设置作者
@@ -27,14 +27,14 @@ public class NewGenerator {
             })
             .packageConfig(builder -> {
                 builder.parent("com.wxy97") // 设置父包名
-                    .moduleName("test") // 设置父包模块名
+                    .moduleName("system") // 设置父包模块名
                     .entity("model.po")
                     .service("service")
                     .serviceImpl("service.impl")
                     .xml("mapper");
             })
             .strategyConfig(builder -> {
-                builder.addInclude("mq_message")
+                builder.addInclude("dictionary")
                     .mapperBuilder()
                     .enableBaseResultMap()
                     .enableBaseColumnList()

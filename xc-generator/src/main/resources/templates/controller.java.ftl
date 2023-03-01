@@ -33,5 +33,5 @@ public class ${table.controllerName} extends ${superControllerClass} {
 public class ${table.controllerName} {
     </#if>
 
-    }
+}
 </#if>

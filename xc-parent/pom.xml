@@ -12,7 +12,6 @@
         <module>../xc-base</module>
         <module>../xc-content</module>
         <module>../xc-generator</module>
-        <module>../xc-system</module>
     </modules>
 
     <properties>
@@ -23,7 +22,7 @@
         <spring-cloud.version>2022.0.1</spring-cloud.version>
         <org.mapstruct.version>1.5.3.Final</org.mapstruct.version>
         <spring-cloud-alibaba.version>2.2.10-RC1</spring-cloud-alibaba.version>
-        <org.projectlombok.version>1.18.16</org.projectlombok.version>
+        <org.projectlombok.version>1.18.26</org.projectlombok.version>
         <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
         <fastjson.version>1.2.83</fastjson.version>
         <druid-spring-boot-starter.version>1.2.16</druid-spring-boot-starter.version>

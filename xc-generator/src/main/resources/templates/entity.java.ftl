@@ -65,9 +65,9 @@ public class ${entity} {
         <#elseif swagger>
     @ApiModelProperty("${field.comment}")
         <#else>
-            /**
-            * ${field.comment}
-            */
+    /**
+    * ${field.comment}
+    */
         </#if>
     </#if>
     <#if field.keyFlag>
