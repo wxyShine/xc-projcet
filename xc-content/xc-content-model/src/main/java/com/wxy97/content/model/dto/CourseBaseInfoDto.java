@@ -1,11 +1,16 @@
 package com.wxy97.content.model.dto;
 
 import com.wxy97.content.model.po.CourseBase;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+
+import java.math.BigDecimal;
 
 /**
  * @description 课程基本信息dto
- * @author wxy
+ * @author Mr.M
+ * @date 2022/9/7 17:44
+ * @version 1.0
  */
 @Data
 public class CourseBaseInfoDto extends CourseBase {
