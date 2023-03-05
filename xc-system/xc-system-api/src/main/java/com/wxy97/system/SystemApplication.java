@@ -2,6 +2,7 @@ package com.wxy97.system;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
@@ -12,6 +13,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  * @Description:
  */
 @EnableScheduling
+@EnableDiscoveryClient
 @SpringBootApplication
 public class SystemApplication {
 
